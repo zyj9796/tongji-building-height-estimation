@@ -1,0 +1,26 @@
+{
+  "project": "tongji_roof_only_height_v6_equal_height_constraints",
+  "inputs": {
+    "v5_table": "results/tables/roof_only_v5_joint_topk/roof_only_building_heights.csv",
+    "v5_vector": "results/vectors/roof_only_v5_joint_topk/roof_only_building_heights.gpkg",
+    "equal_height_joint_curve": "work/v6_equal_height_pair_clean_id_776_788.csv"
+  },
+  "equal_height_constraints": [
+    {
+      "id_field": "clean_id",
+      "ids": [776, 788],
+      "source": "user_confirmed_equal_height_pair",
+      "selection": "maximum_fine_equal_height_joint_sar_score",
+      "external_reference_height_m": 18.0,
+      "external_reference_max_abs_difference_m": 5.0,
+      "external_reference_role": "validation_only_not_used_in_score"
+    }
+  ],
+  "outputs": {
+    "tables": "results/tables/roof_only_v6_equal_height_constraints",
+    "vectors": "results/vectors/roof_only_v6_equal_height_constraints",
+    "figures": "results/picall/过程图件/roof_only_v6_equal_height_constraints",
+    "picall_svg": "results/picall/正式图件/20_图件_63111781939.svg",
+    "pair_diagnostic_svg": "results/picall/正式图件/21_图件_833608515803.svg"
+  }
+}

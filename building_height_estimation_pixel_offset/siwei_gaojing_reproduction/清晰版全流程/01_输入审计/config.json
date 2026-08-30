@@ -1,0 +1,53 @@
+{
+  "project": "siwei_gaojing_tongji_building_height_pixel_offset_reproduction",
+  "base_elevation_m": 4.0,
+  "reference_building_height_m": 4.0,
+  "master_scene": "20260624",
+  "scenes": ["20260624", "20260616"],
+  "registration": {
+    "global_row_shift_px": 0.0,
+    "global_col_shift_px": 0.0,
+    "local_perpendicular_correction_limit_px": 1.5
+  },
+  "search": {
+    "minimum_height_m": 3.0,
+    "maximum_height_m": 120.0,
+    "coarse_step_m": 1.0,
+    "fine_step_m": 0.1,
+    "fine_half_window_m": 2.0,
+    "coarse_perpendicular_step_px": 0.75,
+    "fine_perpendicular_step_px": 0.25,
+    "maximum_parallel_correction_px": 16.0,
+    "boundary_sampling_step_px": 0.5,
+    "minimum_roof_pixels": 6,
+    "minimum_coverage_fraction": 0.98
+  },
+  "score_weights": {
+    "roof_boundary_edge": 0.55,
+    "roof_inside_outside_contrast": 0.30,
+    "roof_bright_scatter": 0.15,
+    "perpendicular_shift_penalty": 0.05
+  },
+  "acceptance": {
+    "minimum_score_margin": 0.15,
+    "alternative_separation_m": 2.0,
+    "maximum_closest_scene_pair_range_m": 3.0,
+    "maximum_fused_to_scene_pair_difference_m": 3.0,
+    "search_boundary_guard_m": 1.0,
+    "perpendicular_boundary_guard_px": 0.1
+  },
+  "inputs": {
+    "buildings": "/home/u/geocoding/geo_bc/a_geo_tongji/geocoding/data/shp/tongji_clip_rslc_extent_equal_height_clean.shp",
+    "rslc_dir": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_pixel_offset/siwei_gaojing_reproduction/inputs/RE_SLAVES",
+    "projection_code": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_pixel_offset/siwei_gaojing_reproduction/code/siwei_strict_candidate_geometry.py",
+    "roof_evidence_code": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_roof_only/code/run_roof_only_height_search.py",
+    "v10_audit_table": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_roof_only/results/tables/roof_only_v10_scale_adaptive_observability/roof_only_building_heights.csv",
+    "strict_joint_audit_table": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_pixel_offset/siwei_gaojing_reproduction/inputs/strict_audit_adapter.csv"
+  },
+  "outputs": {
+    "tables": "results/tables",
+    "vectors": "results/vectors",
+    "figures": "results/picall/过程图件",
+    "picall": "results/picall/正式图件"
+  }
+}

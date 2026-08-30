@@ -1,0 +1,39 @@
+{
+  "project": "tongji_roof_only_height_v8_full_area_false_peak_suppression",
+  "inputs": {
+    "baseline_table": "results/tables/roof_only_v7_false_peak_suppression/roof_only_building_heights.csv",
+    "baseline_vector": "results/vectors/roof_only_v7_false_peak_suppression/roof_only_building_heights.gpkg",
+    "coarse_curves": "results/tables/roof_only_v3_full/roof_only_score_curves.csv"
+  },
+  "identifier_field": "clean_id",
+  "search": {
+    "prominence_scale_m": 2.0,
+    "fine_half_window_m": 3.0,
+    "fine_step_m": 0.1,
+    "absolute_support_weight": 0.1,
+    "population_regularization_weight": 0.5,
+    "population_kde_bandwidth": 0.25
+  },
+  "acceptance": {
+    "existing_minimum_coarse_margin": 0.05,
+    "recovery_minimum_coarse_margin": 0.15,
+    "minimum_two_scene_prominence": 0.0,
+    "boundary_guard_m": 2.0,
+    "suspect_old_height_minimum_m": 40.0,
+    "suspect_old_to_candidate_difference_m": 15.0
+  },
+  "known_equal_height_groups": [
+    {
+      "clean_id": [776, 788],
+      "height_m": 15.0,
+      "source": "v7_joint_sar_objective_not_external_height"
+    }
+  ],
+  "outputs": {
+    "tables": "results/tables/roof_only_v8_full_area",
+    "vectors": "results/vectors/roof_only_v8_full_area",
+    "figures": "results/picall/过程图件/roof_only_v8_full_area",
+    "picall_map_svg": "results/picall/正式图件/24_图件_720662741050.svg",
+    "picall_audit_svg": "results/picall/正式图件/25_图件_154437898046.svg"
+  }
+}

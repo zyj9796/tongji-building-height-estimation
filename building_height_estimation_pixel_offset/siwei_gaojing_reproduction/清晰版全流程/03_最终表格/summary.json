@@ -1,0 +1,37 @@
+{
+  "method": "adaptive_boundary_rescue_spatial_residual_field_strict_reprojection_multibranch_fusion",
+  "buildings": 1028,
+  "primary_image_registrations": 431,
+  "boundary_candidates": 359,
+  "boundary_recovered": 173,
+  "strict_candidates": 604,
+  "strict_usable": 193,
+  "final_heights": 435,
+  "confidence_counts": {
+    "supplemental": 251,
+    "high": 76,
+    "medium": 68,
+    "low": 40
+  },
+  "source_counts": {
+    "legacy_hybrid_supplement": 245,
+    "strict_refined": 190
+  },
+  "duplicate_targets_rejected": 6,
+  "height_mean_m": 24.677350848064396,
+  "height_median_m": 21.599999999999863,
+  "height_range_m": [
+    3.3999999999999986,
+    108.30256718590871
+  ],
+  "height_definition": "building_height_above_ground",
+  "base_elevation_m": 4.0,
+  "roof_elevation_to_height": "final_height_m = final_roof_elevation_m - base_elevation_m",
+  "search_boundary_solutions_rejected": true,
+  "prior_height_used_as_final_fill": false,
+  "external_accuracy_validated": false,
+  "table": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_pixel_offset/siwei_gaojing_reproduction/results/tables/joint_quantity_quality_building_heights.csv",
+  "vector": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_pixel_offset/siwei_gaojing_reproduction/results/vectors/joint_quantity_quality_optimization.gpkg",
+  "registration_svg": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_pixel_offset/siwei_gaojing_reproduction/results/picall/正式图件/15_数量质量联合配准.svg",
+  "height_svg": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_pixel_offset/siwei_gaojing_reproduction/results/picall/正式图件/16_数量质量联合建筑高度图.svg"
+}

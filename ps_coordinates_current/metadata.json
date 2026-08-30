@@ -1,0 +1,34 @@
+{
+  "status": "current",
+  "point_count": 23178,
+  "selection": "finite PSI height above 4 m model ground >= 0 m",
+  "below_ground_filter_only": true,
+  "retained_height_values_modified": false,
+  "height_source": "PSI only",
+  "horizontal_coordinates": {
+    "geographic": "EPSG:4326, longitude/latitude in degrees",
+    "projected": "EPSG:32651, WGS 84 / UTM zone 51N in metres",
+    "sar_pixels": "master 20220601, 1-based azimuth row and range sample"
+  },
+  "vertical_coordinates": {
+    "psi_scatterer_elevation_wusong_m": "internally ground-referenced PSI scatterer elevation in the project Wusong datum",
+    "psi_height_above_4m_ground_m": "PSI scatterer elevation minus 4.000 m model ground",
+    "height_range_above_ground_m": [
+      0.001036868,
+      93.918379112
+    ],
+    "scatterer_elevation_range_wusong_m": [
+      4.001036868,
+      97.918379112
+    ]
+  },
+  "shp_reference": "Building SHP height is reference-only and never changes, clips, weights, or rejects PSI height.",
+  "gpkg_layers": {
+    "ps_positive_3d_wusong": "EPSG:32651 PointZ; Z is PSI Wusong elevation",
+    "ps_positive_2d_wgs84": "EPSG:4326 Point"
+  },
+  "limitations": [
+    "All finite PSI estimates at or above model ground are included unchanged; only below-ground estimates are removed.",
+    "The height is internally ground-referenced and lacks independent LiDAR/GNSS/leveling validation."
+  ]
+}

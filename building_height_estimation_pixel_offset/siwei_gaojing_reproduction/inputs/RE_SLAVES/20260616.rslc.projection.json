@@ -1,0 +1,15 @@
+{
+  "source_gamma_par": "/home/u/geocoding/geo_bc/a_geo_tongji/height_estimation/building_height_estimation_pixel_offset/siwei_gaojing_reproduction/inputs/RE_SLAVES/20260624.source.slc.par",
+  "diff_par": "/home/u/geocoding/geo_bc/a_geo_tongji/geocoding/siwei_image1_volume_geocode/work/gamma_base_refinement/base_refinement.diff_par",
+  "source_window": {
+    "xoff": 22351,
+    "yoff": 0,
+    "width": 6726,
+    "height": 4703
+  },
+  "output_shape": {
+    "width": 900,
+    "height": 630
+  },
+  "height_input": "Wusong elevation metres; converted with provisional GAMMA EGM96 proxy"
+}

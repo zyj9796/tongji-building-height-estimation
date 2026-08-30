@@ -1,0 +1,60 @@
+{
+  "project": "tongji_roof_only_height_v10_scale_adaptive_observability",
+  "inputs": {
+    "baseline_table": "results/tables/roof_only_v9_cross_method_spatial_audit/roof_only_building_heights.csv",
+    "baseline_audit": "results/tables/roof_only_v9_cross_method_spatial_audit/roof_only_v9_audit.csv",
+    "baseline_vector": "results/vectors/roof_only_v9_cross_method_spatial_audit/roof_only_building_heights.gpkg",
+    "coarse_curves": "results/tables/roof_only_v3_full/roof_only_score_curves.csv"
+  },
+  "identifier_field": "clean_id",
+  "scale_classes": {
+    "small_area_quantile": 0.25,
+    "large_area_quantile": 0.75,
+    "elongated_aspect_quantile": 0.80,
+    "profiles": {
+      "small": {"bright": 0.25, "edge": 0.35, "contrast": 0.30, "ps": 0.10, "fine_half_window_m": 2.0, "minimum_roof_pixels": 6},
+      "standard": {"bright": 0.15, "edge": 0.50, "contrast": 0.30, "ps": 0.05, "fine_half_window_m": 3.0, "minimum_roof_pixels": 10},
+      "large": {"bright": 0.10, "edge": 0.55, "contrast": 0.30, "ps": 0.05, "fine_half_window_m": 4.0, "minimum_roof_pixels": 15},
+      "elongated": {"bright": 0.10, "edge": 0.60, "contrast": 0.25, "ps": 0.05, "fine_half_window_m": 4.0, "minimum_roof_pixels": 10}
+    }
+  },
+  "search": {
+    "prominence_scale_m": 2.0,
+    "fine_step_m": 0.1,
+    "absolute_support_weight": 0.1,
+    "population_regularization_weight": 0.35,
+    "population_kde_bandwidth": 0.25,
+    "observability_weight": 0.70
+  },
+  "observability": {
+    "maximum_shadow_fraction": 0.20,
+    "minimum_texture_p90_p10": 0.20,
+    "maximum_extreme_bright_fraction": 0.15,
+    "ideal_top5_energy_fraction": 0.08,
+    "maximum_top5_energy_fraction": 0.35,
+    "scene_score_threshold": 0.55,
+    "minimum_observable_scenes": 2,
+    "minimum_two_scene_score": 0.55,
+    "severe_two_scene_score": 0.35
+  },
+  "acceptance": {
+    "existing_minimum_fine_margin": 0.08,
+    "recovery_minimum_fine_margin": 0.18,
+    "minimum_objective_improvement_for_large_change": 0.12,
+    "minor_refinement_maximum_difference_m": 1.0,
+    "minimum_two_scene_prominence": 0.0,
+    "fine_boundary_guard_m": 0.4
+  },
+  "cross_method_veto": {
+    "maximum_added_error_for_existing_m": 1.0,
+    "maximum_error_for_recovery_m": 12.0
+  },
+  "outputs": {
+    "tables": "results/tables/roof_only_v10_scale_adaptive_observability",
+    "vectors": "results/vectors/roof_only_v10_scale_adaptive_observability",
+    "figures": "results/picall/过程图件/roof_only_v10_scale_adaptive_observability",
+    "picall_map_svg": "results/picall/正式图件/29_图件_900290979244.svg",
+    "picall_audit_svg": "results/picall/正式图件/30_图件_1077215736758.svg",
+    "picall_observability_map_svg": "results/picall/正式图件/31_图件_616212625423.svg"
+  }
+}

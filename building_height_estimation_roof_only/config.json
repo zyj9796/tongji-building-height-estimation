@@ -1,0 +1,50 @@
+{
+  "project": "tongji_roof_only_height_search",
+  "method": "fixed_4m_base_strict_roof_only_projection",
+  "base_elevation_m": 4.0,
+  "master_scene": "20200708",
+  "scenes": ["20200708", "20200730", "20200821"],
+  "registration": {
+    "global_row_shift_px": 34.0,
+    "global_col_shift_px": -1.0,
+    "local_building_shift": "disabled",
+    "scene_shift": "disabled_coregistered_rslc_share_master_grid"
+  },
+  "height_search": {
+    "minimum_m": 3.0,
+    "maximum_m": 150.0,
+    "coarse_step_m": 1.0,
+    "fine_step_m": 0.1,
+    "fine_half_window_m": 2.0,
+    "prior_lower_factor": 0.35,
+    "prior_upper_factor": 2.0,
+    "prior_upper_margin_m": 12.0,
+    "prior_absolute_margin_m": 25.0,
+    "prior_penalty_weight": 0.03
+  },
+  "score_weights": {
+    "roof_bright_scatter": 0.45,
+    "roof_boundary_edge": 0.30,
+    "roof_inside_outside_contrast": 0.20,
+    "roof_ps_support": 0.05
+  },
+  "inputs": {
+    "buildings": "../../geocoding/data/shp/tongji_clip_rslc_extent_equal_height_clean.shp",
+    "ps_points": "../../geocoding/data/ps_points_all.csv",
+    "rslc_dir": "../../geocoding/data/RE_SLAVES",
+    "shared_projection_code": "../building_height_estimation/code",
+    "strict_joint_reference": "../building_height_estimation/results/tables/strict_geometry_joint_full/tongji_full_area_building_height_estimates.csv"
+  },
+  "outputs": {
+    "tables": "results/tables",
+    "vectors": "results/vectors",
+    "figures": "results/picall/过程图件",
+    "work": "work"
+  },
+  "visualization": {
+    "diagnostic_buildings": 12,
+    "png_dpi": 300,
+    "tiff_dpi": 600,
+    "generate_pdf": false
+  }
+}

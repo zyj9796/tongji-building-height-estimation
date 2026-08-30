@@ -1,0 +1,18 @@
+{
+  "completed_stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "pending_optional_stage": 8,
+  "base_definition": "Wusong elevation 4 m",
+  "roof_definition": "Wusong roof elevation = 4 m + building height",
+  "height_definition": "building height = roof elevation - 4 m",
+  "buildings": 1028,
+  "accepted": 435,
+  "external_accuracy_validated": false
+}

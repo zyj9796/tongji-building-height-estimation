@@ -1,0 +1,29 @@
+{
+  "project": "tongji_roof_only_height_v5_joint_topk",
+  "inputs": {
+    "v4_table": "results/tables/roof_only_v4_consensus_audit/roof_only_building_heights.csv",
+    "v4_vector": "results/vectors/roof_only_v4_consensus_audit/roof_only_building_heights.gpkg",
+    "v3_curves": "results/tables/roof_only_v3_full/roof_only_score_curves.csv",
+    "joint_audit": "work/v5_joint_conflict_analysis.csv",
+    "topk_audit": "work/v5_topk_candidate_audit.csv"
+  },
+  "joint_conflict": {
+    "minimum_sar_overlap_fraction": 0.20,
+    "minimum_similar_neighbor_count": 2,
+    "minimum_group_height_deviation_m": 15.0
+  },
+  "topk_recovery": {
+    "maximum_score_loss": 0.15,
+    "maximum_candidate_overlap_fraction": 0.20,
+    "minimum_overlap_reduction": 0.15,
+    "minimum_group_deviation_reduction_m": 4.0,
+    "maximum_candidate_group_deviation_m": 14.0,
+    "maximum_candidate_distance_to_prior_or_strict_m": 10.0
+  },
+  "outputs": {
+    "tables": "results/tables/roof_only_v5_joint_topk",
+    "vectors": "results/vectors/roof_only_v5_joint_topk",
+    "figures": "results/picall/过程图件/roof_only_v5_joint_topk",
+    "picall_svg": "results/picall/正式图件/19_图件_743366667838.svg"
+  }
+}

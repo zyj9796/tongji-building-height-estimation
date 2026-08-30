@@ -1,0 +1,29 @@
+{
+  "project": "tongji_roof_only_height_v7_false_peak_suppression",
+  "id_field": "clean_id",
+  "ids": [776, 788],
+  "external_reference_height_m": 18.0,
+  "external_reference_max_abs_difference_m": 5.0,
+  "search": {
+    "minimum_m": 3.0,
+    "maximum_m": 51.0,
+    "coarse_step_m": 1.0,
+    "fine_half_window_m": 3.0,
+    "fine_step_m": 0.1,
+    "prominence_scale_m": 2.0,
+    "absolute_support_weight": 0.1,
+    "population_regularization_weight": 0.5,
+    "population_kde_bandwidth": 0.25
+  },
+  "inputs": {
+    "v5_table": "results/tables/roof_only_v5_joint_topk/roof_only_building_heights.csv",
+    "v5_vector": "results/vectors/roof_only_v5_joint_topk/roof_only_building_heights.gpkg"
+  },
+  "outputs": {
+    "tables": "results/tables/roof_only_v7_false_peak_suppression",
+    "vectors": "results/vectors/roof_only_v7_false_peak_suppression",
+    "figures": "results/picall/过程图件/roof_only_v7_false_peak_suppression",
+    "picall_map_svg": "results/picall/正式图件/22_图件_583593733922.svg",
+    "picall_diagnostic_svg": "results/picall/正式图件/23_图件_77238875177.svg"
+  }
+}

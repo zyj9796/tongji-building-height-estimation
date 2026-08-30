@@ -1,0 +1,36 @@
+{
+  "project": "tongji_roof_only_height_v9_cross_method_spatial_audit",
+  "inputs": {
+    "v7_table": "results/tables/roof_only_v7_false_peak_suppression/roof_only_building_heights.csv",
+    "v8_table": "results/tables/roof_only_v8_full_area/roof_only_building_heights.csv",
+    "v8_vector": "results/vectors/roof_only_v8_full_area/roof_only_building_heights.gpkg",
+    "strict_joint_table": "../building_height_estimation/results/tables/strict_geometry_joint_full/tongji_full_area_building_height_estimates.csv"
+  },
+  "spatial_audit": {
+    "maximum_centroid_distance_m": 150.0,
+    "minimum_area_ratio": 0.4,
+    "maximum_area_ratio": 2.5,
+    "minimum_aspect_ratio_ratio": 0.5,
+    "maximum_aspect_ratio_ratio": 2.0,
+    "maximum_orientation_difference_deg": 20.0,
+    "minimum_comparable_neighbors": 2,
+    "support_difference_m": 10.0,
+    "conflict_difference_m": 15.0
+  },
+  "cross_method_audit": {
+    "reliable_qualities": ["high", "medium"],
+    "maximum_scene_range_m": 5.0,
+    "support_difference_m": 10.0,
+    "restore_rejected_v7_difference_m": 10.0,
+    "revert_update_v7_difference_m": 7.0,
+    "minimum_v8_conflict_difference_m": 15.0
+  },
+  "outputs": {
+    "tables": "results/tables/roof_only_v9_cross_method_spatial_audit",
+    "vectors": "results/vectors/roof_only_v9_cross_method_spatial_audit",
+    "figures": "results/picall/过程图件/roof_only_v9_cross_method_spatial_audit",
+    "picall_map_svg": "results/picall/正式图件/26_图件_175153691781.svg",
+    "picall_audit_svg": "results/picall/正式图件/27_图件_22706795486.svg",
+    "picall_reliability_map_svg": "results/picall/正式图件/28_图件_586633083024.svg"
+  }
+}

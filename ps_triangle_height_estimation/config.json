@@ -1,0 +1,130 @@
+{
+  "project": "tongji_ps_triangle_height_estimation",
+  "scene": "20200708",
+  "base_elevation_m": 4.0,
+  "height_field": "height",
+  "minimum_ps_coherence": 0.55,
+  "ps_pixel_indexing": "one_based",
+  "surface_priority": ["wall", "roof", "bottom"],
+  "mask_refinement": {
+    "enabled": true,
+    "surfaces": ["roof", "wall"],
+    "background_gap_px": 1,
+    "background_buffer_px": 5,
+    "threshold_sigma": 0.35,
+    "closing_iterations": 1,
+    "minimum_component_pixels": 2,
+    "minimum_component_fraction_of_largest": 0.08,
+    "maximum_components_per_surface": 3,
+    "minimum_fallback_pixels": 3
+  },
+  "height_inversion": {
+    "minimum_height_m": 3.0,
+    "maximum_height_m": 150.0,
+    "prior_lower_factor": 0.35,
+    "prior_upper_factor": 2.0,
+    "prior_upper_margin_m": 12.0,
+    "prior_minimum_span_above_m": 25.0,
+    "coarse_step_m": 2.0,
+    "fine_step_m": 0.2,
+    "fine_half_window_m": 2.0,
+    "roof_distance_sigma_px": 1.2,
+    "roof_edge_sigma_px": 0.8,
+    "corridor_buffer_px": 2.0,
+    "component_weights": {
+      "roof_density": 0.45,
+      "roof_edge": 0.35,
+      "wall_density": 0.20
+    }
+  },
+  "registration": {
+    "global_row_shift_px": 34.0,
+    "global_col_shift_px": -1.0,
+    "use_local_row_shift": true,
+    "use_local_col_shift": true
+  },
+  "iterative_adjustment": {
+    "registration_update_mode": "freeze_after_initial",
+    "minimum_height_m": 3.0,
+    "maximum_height_m": 150.0,
+    "maximum_iterations": 8,
+    "minimum_iterations": 2,
+    "quality_damping": {
+      "high": 0.7,
+      "medium": 0.5,
+      "low": 0.25
+    },
+    "maximum_height_change_per_iteration_m": 8.0,
+    "median_height_change_tolerance_m": 0.25,
+    "p90_height_change_tolerance_m": 1.0,
+    "surface_stability_fraction": 0.98,
+    "local_registration_max_shift_px": 10,
+    "local_registration_coarse_step_px": 2,
+    "local_registration_min_score_gain": 5.0,
+    "registration_feature_v2": {
+      "amplitude_contrast_weight": 80.0,
+      "boundary_edge_contrast_weight": 45.0,
+      "normal_edge_response_weight": 35.0,
+      "bright_fraction_contrast_weight": 25.0,
+      "shift_penalty": 0.02,
+      "minimum_improved_feature_count": 2,
+      "reject_search_boundary": true
+    },
+    "registration_feature_v3": {
+      "scene_search_max_shift_px": 8,
+      "local_refinement_radius_px": 2,
+      "minimum_roof_pixels": 24,
+      "support_quantile": 0.62,
+      "top_region_contrast_weight": 0.30,
+      "top_support_contrast_weight": 0.25,
+      "roof_boundary_support_weight": 0.20,
+      "normal_edge_response_weight": 0.15,
+      "top_texture_contrast_weight": 0.10,
+      "shift_penalty": 0.05,
+      "minimum_local_score_gain": 0.35,
+      "minimum_total_score_gain": 0.50,
+      "minimum_peak_margin": 0.20,
+      "minimum_improved_feature_count": 3
+    },
+    "registration_reference_v4": {
+      "registration_table": "../building_height_estimation_pixel_offset/results/tables/image_feature_only_registration_heights.csv",
+      "maximum_reference_shift_px": 6.0,
+      "minimum_score_margin": 0.20,
+      "minimum_oriented_edge_gain": 0.0,
+      "minimum_continuity_gain": 0.0,
+      "maximum_scene_pair_distance_px": 3.0,
+      "maximum_fused_to_pair_distance_px": 2.0
+    },
+    "registration_native_v5": {
+      "reference_code_dir": "../building_height_estimation_pixel_offset/code",
+      "roof_evidence_code": "../building_height_estimation_roof_only/code/run_roof_only_height_search.py",
+      "rslc_dir": "../../geocoding/data/RE_SLAVES",
+      "scenes": ["20200708", "20200730", "20200821"],
+      "maximum_shift_px": 6.0,
+      "minimum_score_margin": 0.20,
+      "minimum_oriented_edge_gain": 0.0,
+      "minimum_continuity_gain": 0.0,
+      "maximum_scene_pair_distance_px": 3.0,
+      "maximum_fused_to_pair_distance_px": 2.0
+    },
+    "height_consistent_projection_v6": {
+      "derivative_half_step_m": 0.5,
+      "maximum_initial_height_change_m": 10.0,
+      "maximum_perpendicular_residual_px": 3.0,
+      "selection_column": "reference_multiscene_override"
+    }
+  },
+  "inputs": {
+    "buildings": "../../geocoding/data/shp/tongji_clip_rslc_extent_equal_height_clean.shp",
+    "ps_points": "../../geocoding/data/ps_points_all.csv",
+    "rslc_par": "../../geocoding/data/RE_SLAVES/20200708.rslc.par",
+    "local_registration": "../../geocoding/results/outputs/strict_local_registration/20200708_strict_local_registration_metrics.csv"
+  },
+  "outputs": {
+    "tables": "results/tables",
+    "vectors": "results/vectors",
+    "triangles": "results/triangles",
+    "summary": "results/summary.json",
+    "height_estimates": "results/height_estimation"
+  }
+}

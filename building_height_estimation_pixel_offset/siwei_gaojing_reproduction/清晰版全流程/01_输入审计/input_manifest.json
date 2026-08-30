@@ -1,0 +1,63 @@
+{
+  "included_scenes": [
+    {
+      "scene": "20260624",
+      "sensor": "SVN2-03",
+      "beam": "SP_527",
+      "orbit": "descending",
+      "role": "master"
+    },
+    {
+      "scene": "20260616",
+      "sensor": "SVN2-05",
+      "beam": "SP_527",
+      "orbit": "descending",
+      "role": "coregistered evidence"
+    }
+  ],
+  "excluded_scenes": [
+    {
+      "scene": "20260412",
+      "reason": "ascending orbit; incompatible layover direction"
+    },
+    {
+      "scene": "20260328",
+      "reason": "SP_506 and 23.50 degree incidence; incompatible pixel geometry"
+    }
+  ],
+  "building_vector_audit": {
+    "source_crs": "EPSG:4326",
+    "working_crs": "EPSG:4326",
+    "features": 1028,
+    "valid_geometries": 1028,
+    "control_points": 1200
+  },
+  "master_source_window": {
+    "xoff": 22351,
+    "yoff": 0,
+    "width": 6726,
+    "height": 4703
+  },
+  "output_shape": {
+    "width": 900,
+    "height": 630
+  },
+  "slave_to_master_ground_control_affine": {
+    "slave_col_from_master_col_row_1": [
+      0.9996691360810664,
+      3.888835558358541e-05,
+      -502.74103492972637
+    ],
+    "slave_row_from_master_col_row_1": [
+      -3.067224868110946e-05,
+      0.9999163813376015,
+      -170.60564705011143
+    ],
+    "residual_full_resolution_px": {
+      "median": 0.0003841598420694173,
+      "p95": 0.0008415456672956428,
+      "max": 0.0012247811035761913
+    }
+  },
+  "vertical_datum": "PROVISIONAL: Wusong + GAMMA EGM96 proxy"
+}

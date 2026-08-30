@@ -1,0 +1,26 @@
+{
+  "project": "tongji_roof_only_height_v4_consensus_audit",
+  "inputs": {
+    "v3_table": "results/tables/roof_only_v3_full/roof_only_building_heights.csv",
+    "v3_curves": "results/tables/roof_only_v3_full/roof_only_score_curves.csv",
+    "v3_vector": "results/vectors/roof_only_v3_full/roof_only_building_heights.gpkg",
+    "strict_joint_reference": "../building_height_estimation/results/tables/strict_geometry_joint_full/tongji_full_area_building_height_estimates.csv"
+  },
+  "conflict_test": {
+    "minimum_roof_to_prior_difference_m": 12.0,
+    "minimum_roof_to_strict_difference_m": 12.0,
+    "maximum_prior_to_strict_difference_m": 10.0
+  },
+  "secondary_sar_peak": {
+    "consensus_half_window_m": 6.0,
+    "maximum_score_loss": 0.15,
+    "minimum_roof_coverage_fraction": 0.98,
+    "minimum_roof_pixels": 3
+  },
+  "outputs": {
+    "tables": "results/tables/roof_only_v4_consensus_audit",
+    "vectors": "results/vectors/roof_only_v4_consensus_audit",
+    "figures": "results/picall/过程图件/roof_only_v4_consensus_audit",
+    "picall_svg": "results/picall/正式图件/18_图件_858184810671.svg"
+  }
+}
